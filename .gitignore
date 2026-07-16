@@ -1,0 +1,11 @@
+node_modules/
+
+# Artefact de build (zip d'upload manuel) — inutile en déploiement Git
+portfolio-deploy.zip
+
+# Notes internes (non destinées à la mise en ligne)
+assets/A_DEPOSER.md
+
+# Divers
+.Rhistory
+*.log

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-label="Visuel à venir">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#cbd5e0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="400" fill="#ebf2fa"/>
+  <rect width="600" height="400" fill="url(#grid)"/>
+  <circle cx="300" cy="176" r="46" fill="none" stroke="#2b6cb0" stroke-width="2"/>
+  <polygon points="300,138 292,180 300,174 308,180" fill="#1a365d"/>
+  <polygon points="300,214 292,172 300,178 308,172" fill="#a3a3a3"/>
+  <text x="300" y="268" text-anchor="middle" font-family="Poppins, sans-serif" font-size="17" font-weight="600" fill="#1a365d">Visuel à venir</text>
+</svg>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Ravelonjaka — Géomaticien</title>
+  <meta name="description" content="Portfolio SIG de Lucas Ravelonjaka, géomaticien spécialisé en webmapping et développement SIG." />
+  <meta name="keywords" content="Géomatique, SIG, Webmapping, Cartographie, Portfolio, Lucas Ravelonjaka" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="mediaqueries.css" />
+</head>
+
+<body>
+  <!-- DESKTOP NAV -->
+  <nav id="desktop-nav">
+    <div class="logo">
+      <svg class="compass-rose" viewBox="0 0 100 100" width="36" height="36">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="#1a365d" stroke-width="2"/>
+        <circle cx="50" cy="50" r="4" fill="#2b6cb0"/>
+        <!-- N -->
+        <polygon points="50,8 44,40 50,35 56,40" fill="#1a365d"/>
+        <!-- S -->
+        <polygon points="50,92 44,60 50,65 56,60" fill="#a3a3a3"/>
+        <!-- E -->
+        <polygon points="92,50 60,44 65,50 60,56" fill="#a3a3a3"/>
+        <!-- W -->
+        <polygon points="8,50 40,44 35,50 40,56" fill="#a3a3a3"/>
+        <!-- Cardinal labels -->
+        <text x="50" y="6" text-anchor="middle" font-size="8" font-weight="700" fill="#1a365d" font-family="Poppins, sans-serif">N</text>
+        <text x="50" y="99" text-anchor="middle" font-size="7" fill="#718096" font-family="Poppins, sans-serif">S</text>
+        <text x="97" y="53" text-anchor="middle" font-size="7" fill="#718096" font-family="Poppins, sans-serif">E</text>
+        <text x="3" y="53" text-anchor="middle" font-size="7" fill="#718096" font-family="Poppins, sans-serif">O</text>
+      </svg>
+      Lucas Ravelonjaka
+    </div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HAMBURGER NAV -->
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <svg class="compass-rose" viewBox="0 0 100 100" width="30" height="30">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="#1a365d" stroke-width="2"/>
+        <circle cx="50" cy="50" r="4" fill="#2b6cb0"/>
+        <polygon points="50,8 44,40 50,35 56,40" fill="#1a365d"/>
+        <polygon points="50,92 44,60 50,65 56,60" fill="#a3a3a3"/>
+        <polygon points="92,50 60,44 65,50 60,56" fill="#a3a3a3"/>
+        <polygon points="8,50 40,44 35,50 40,56" fill="#a3a3a3"/>
+      </svg>
+      L.R.
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">À propos</a></li>
+        <li><a href="#competences" onclick="toggleMenu()">Compétences</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projets</a></li>
+        <li><a href="#parcours" onclick="toggleMenu()">Parcours</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION with map background -->
+  <section id="profile">
+    <div id="hero-map"></div>
+    <div class="hero-content">
+      <div class="section__pic-container">
+        <img src="./assets/photopro_lucas.jpg" alt="Lucas Ravelonjaka"
+          onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Bonjour, je suis</p>
+        <h1 class="title">Lucas Ravelonjaka</h1>
+        <p class="section__text__p2">Géomaticien</p>
+        <p class="section__text__p3">Spécialisé en webmapping et développement SIG</p>
+        <p class="location"><i class="fas fa-map-marker-alt"></i> Basé en Île-de-France</p>
+        <p class="coordinates">48.9375° N, 2.1636° E</p>
+        <div class="btn-container">
+          <button id="cv-btn" class="btn btn-color-2" onclick="window.open('./assets/cv.pdf')">
+            <i class="fas fa-download"></i> Télécharger CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            <i class="fas fa-envelope"></i> Me contacter
+          </button>
+        </div>
+        <div id="socials-container">
+          <a href="https://www.linkedin.com/in/lucasravelonjaka" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="https://github.com/hoperror" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <section id="about">
+    <p class="section__text__p1">Qui suis-je</p>
+    <h1 class="title">À propos</h1>
+    <div class="section-container">
+      <div class="about-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <i class="fas fa-briefcase icon-large"></i>
+            <h3>Expérience</h3>
+            <p>2 ans<br />Géomaticien apprenti<br />Port de Boulogne-sur-Mer—Calais</p>
+          </div>
+          <div class="details-container">
+            <i class="fas fa-graduation-cap icon-large"></i>
+            <h3>Formation</h3>
+            <p>Master G2M<br />Université Paris 8<br />2024 – 2026</p>
+          </div>
+          <div class="details-container">
+            <i class="fas fa-map-marked-alt icon-large"></i>
+            <h3>Spécialisation</h3>
+            <p>Webmapping<br />Bases de données spatiales<br />Analyse SIG</p>
+          </div>
+        </div>
+        <div class="text-container">
+          <p>
+            Géomaticien spécialisé en webmapping et développement SIG, je dispose de deux ans d'expérience 
+            en apprentissage au service de la gestion portuaire. Je maîtrise l'ensemble de la chaîne de la 
+            donnée géographique, de l'administration de bases de données spatiales au déploiement d'outils 
+            cartographiques interactifs.
+          </p>
+          <p style="margin-top: 1rem;">
+            Souple, réfléchi et curieux, je porte un intérêt particulier pour l'application de la géomatique 
+            dans la gestion et la protection de l'environnement et des espaces naturels.
+            Disponible dès septembre 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+    <i class="fas fa-chevron-down arrow" onclick="location.href='./#competences'"></i>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section id="competences">
+    <p class="section__text__p1">Mes outils</p>
+    <h1 class="title">Compétences</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+
+        <div class="details-container">
+          <h2 class="experience-sub-title"><i class="fas fa-globe"></i> Web SIG</h2>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>HTML/CSS</span><span>8/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>JavaScript</span><span>7/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 70%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>PHP</span><span>7/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 70%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Django</span><span>6/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 60%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Leaflet.js</span><span>9/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 90%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="details-container">
+          <h2 class="experience-sub-title"><i class="fas fa-chart-bar"></i> Analyse & traitement</h2>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>Pandas</span><span>6/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 60%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>GeoPandas</span><span>8/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Folium</span><span>8/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Jupyter</span><span>9/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>R (sf, mapsf)</span><span>8/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="details-container">
+          <h2 class="experience-sub-title"><i class="fas fa-database"></i> Bases de données</h2>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>PL/SQL</span><span>7/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 70%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>PostgreSQL</span><span>8/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>PostGIS</span><span>8/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="details-container">
+          <h2 class="experience-sub-title"><i class="fas fa-map"></i> Logiciels SIG</h2>
+          <div class="skills-list">
+            <div class="skill-item">
+              <div class="skill-info"><span>QGIS</span><span>9/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>ArcGIS Pro</span><span>8/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>ArcGIS Online</span><span>8/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>Experience Builder</span><span>7/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 70%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span>FME</span><span>6/10</span></div>
+              <div class="scale-bar"><div class="scale-bar-fill" style="width: 60%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <i class="fas fa-chevron-down arrow" onclick="location.href='./#projects'"></i>
+  </section>
+
+  <!-- PROJETS SIG -->
+  <section id="projects">
+    <p class="section__text__p1">Mes réalisations</p>
+    <h1 class="title">Projets SIG</h1>
+
+    <!-- Légende cartographique -->
+    <div class="map-legend">
+      <div class="legend-item"><span class="legend-color" style="background: #2b6cb0"></span> Professionnel</div>
+      <div class="legend-item"><span class="legend-color" style="background: #38a169"></span> Académique</div>
+    </div>
+
+    <div class="experience-details-container">
+      <div class="about-containers projects-grid">
+
+        <div class="details-container color-container project-pro">
+          <div class="article-container">
+            <img src="./assets/projects/interventions.png" alt="Outil cartographique portuaire" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Outil cartographique portuaire</h2>
+          <p class="project-desc">Application web de suivi des interventions sur le domaine portuaire de Boulogne-sur-Mer—Calais.</p>
+          <p class="project-tech"><i>Django, PostgreSQL/PostGIS, Leaflet.js</i></p>
+        </div>
+
+        <div class="details-container color-container project-pro">
+          <div class="article-container">
+            <img src="./assets/projects/lariport.jpg" alt="Portail Laridés" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Portail Laridés</h2>
+          <p class="project-desc">Portail cartographique de suivi des colonies de mouettes et goélands sur le port.</p>
+          <p class="project-tech"><i>ArcGIS Online, Experience Builder</i></p>
+        </div>
+
+        <div class="details-container color-container project-academic">
+          <div class="article-container">
+            <img src="./assets/projects/tiques_paysages.jpg" alt="Tiques et paysages" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Tiques et paysages français</h2>
+          <p class="project-desc">Analyse multivariée (ACP, k-means) des paysages associés aux piqûres de tiques en France.</p>
+          <p class="project-tech"><i>Python, R, QGIS, Experience Builder</i></p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/hoperror/Tiques-et-paysage---Projet-tutor-G2M'">
+              <i class="fab fa-github"></i> GitHub
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://hoperror.github.io/Tiques-et-paysage---Projet-tutor-G2M/'">
+              <i class="fas fa-external-link-alt"></i> Démo
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container project-academic">
+          <div class="article-container">
+            <img src="./assets/projects/videoprotection_gpso.jpg" alt="Vidéoprotection GPSO" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Vidéoprotection et sécurité</h2>
+          <p class="project-desc">Analyse SIG de l'impact de la vidéoprotection sur la délinquance de rue à Grand Paris Seine Ouest.</p>
+          <p class="project-tech"><i>Python/Pandas, QGIS, PyQGIS, Open Data</i></p>
+        </div>
+
+        <div class="details-container color-container project-academic">
+          <div class="article-container">
+            <img src="./assets/projects/out_of_africa.gif" alt="Simulation Out of Africa" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Simulation "Out of Africa"</h2>
+          <p class="project-desc">Modèle multi-agents de la dispersion humaine depuis l'Afrique vers le Vieux Monde.</p>
+          <p class="project-tech"><i>Julia, Agents.jl, CairoMakie</i></p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/hoperror/simulation-out-of-africa'">
+              <i class="fab fa-github"></i> GitHub
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container project-academic">
+          <div class="article-container">
+            <img src="./assets/projects/dengue_girardot.jpg" alt="Dengue Girardot" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Dengue à Girardot</h2>
+          <p class="project-desc">Analyse spatio-temporelle des clusters épidémiques de dengue en Colombie.</p>
+          <p class="project-tech"><i>SaTScan, ArcGIS Pro</i></p>
+        </div>
+
+        <div class="details-container color-container project-academic">
+          <div class="article-container">
+            <img src="./assets/projects/ate_check.jpg" alt="Application ATE" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Application métier ATE</h2>
+          <p class="project-desc">Outil de checking des vols pour agents de trafic aérien avec carte interactive.</p>
+          <p class="project-tech"><i>PHP, PostgreSQL, Leaflet.js</i></p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/hoperror/application-metier-ATE'">
+              <i class="fab fa-github"></i> GitHub
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container project-academic">
+          <div class="article-container">
+            <img src="./assets/projects/sticknation.png" alt="Sticknation" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Blog Sticknation</h2>
+          <p class="project-desc">Plateforme communautaire d'inventaire cartographique avec Django et Leaflet.</p>
+          <p class="project-tech"><i>Django, SQLite, Leaflet.js, AJAX</i></p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/hoperror/sticknation-blog-cartographique'">
+              <i class="fab fa-github"></i> GitHub
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container project-academic">
+          <div class="article-container">
+            <img src="./assets/projects/service_parcellaire.jpg" alt="Service parcellaire Le Pré-Saint-Gervais" class="project-img" onerror="this.onerror=null;this.src='./assets/placeholder.svg'" />
+          </div>
+          <h2 class="experience-sub-title project-title">Service parcellaire LPSG</h2>
+          <p class="project-desc">Application web d'interrogation du cadastre du Pré-Saint-Gervais : recherche de parcelles, statistiques bâti, pente du terrain et historique des transactions (DVF).</p>
+          <p class="project-tech"><i>PostgreSQL/PostGIS, pg_featureserv, Leaflet.js, Bootstrap</i></p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/hoperror/service-parcellaire-lpsg'">
+              <i class="fab fa-github"></i> GitHub
+            </button>
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://hoperror.github.io/service-parcellaire-lpsg/'">
+              <i class="fas fa-external-link-alt"></i> Démo
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <i class="fas fa-chevron-down arrow" onclick="location.href='./#parcours'"></i>
+  </section>
+
+  <!-- PARCOURS (panneau + carte interactive) -->
+  <section id="parcours">
+    <p class="section__text__p1">Mon chemin</p>
+    <h1 class="title">Parcours</h1>
+    <div class="parcours-container">
+      <div class="parcours-panel" id="parcours-panel">
+        <!-- Rempli dynamiquement par JS -->
+      </div>
+      <div id="parcours-map"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section__text__p1">Restons en contact</p>
+    <h1 class="title">Me contacter</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <i class="fas fa-envelope contact-icon"></i>
+        <p><a href="mailto:lucasravelonjaka@gmail.com">lucasravelonjaka@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <i class="fas fa-phone contact-icon"></i>
+        <p><a href="tel:+33663807497">+33 6 63 80 74 97</a></p>
+      </div>
+      <div class="contact-info-container">
+        <i class="fab fa-linkedin contact-icon"></i>
+        <p><a href="https://www.linkedin.com/in/lucasravelonjaka" target="_blank">LinkedIn</a></p>
+      </div>
+      <div class="contact-info-container">
+        <i class="fab fa-github contact-icon"></i>
+        <p><a href="https://github.com/hoperror" target="_blank">GitHub</a></p>
+      </div>
+    </div>
+    <p class="availability">Disponible dès septembre 2026 — Île-de-France — Permis B</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-text">
+      <svg class="compass-rose-footer" viewBox="0 0 100 100" width="18" height="18">
+        <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+        <polygon points="50,8 44,40 50,35 56,40" fill="rgba(255,255,255,0.6)"/>
+        <polygon points="50,92 44,60 50,65 56,60" fill="rgba(255,255,255,0.3)"/>
+        <polygon points="92,50 60,44 65,50 60,56" fill="rgba(255,255,255,0.3)"/>
+        <polygon points="8,50 40,44 35,50 40,56" fill="rgba(255,255,255,0.3)"/>
+      </svg>
+      Lucas Ravelonjaka — Portfolio SIG — 2026
+    </p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+  <script>
+    // =============================================
+    // HERO MAP (background subtil)
+    // =============================================
+    const heroMap = L.map('hero-map', {
+      zoomControl: false,
+      attributionControl: false,
+      dragging: false,
+      scrollWheelZoom: false,
+      doubleClickZoom: false,
+      touchZoom: false,
+      keyboard: false
+    }).setView([46.8, 2.5], 6);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19
+    }).addTo(heroMap);
+
+    // =============================================
+    // PARCOURS MAP (carte interactive)
+    // =============================================
+    const parcoursMap = L.map('parcours-map', {
+      scrollWheelZoom: false
+    }).setView([35, 20], 4);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap &copy; CARTO',
+      maxZoom: 19
+    }).addTo(parcoursMap);
+
+    // Icônes personnalisées
+    const workIcon = L.divIcon({
+      className: 'custom-marker work-marker',
+      html: '<i class="fas fa-briefcase"></i>',
+      iconSize: [32, 32],
+      iconAnchor: [16, 16]
+    });
+
+    const eduIcon = L.divIcon({
+      className: 'custom-marker edu-marker',
+      html: '<i class="fas fa-graduation-cap"></i>',
+      iconSize: [32, 32],
+      iconAnchor: [16, 16]
+    });
+
+    const parcours = [
+      {
+        lat: -18.9137, lon: 47.5361,
+        title: "Licence Sciences de l'éducation",
+        place: "ENS Antananarivo, Madagascar",
+        period: "2017 – 2020",
+        type: "edu",
+        desc: "Découverte de la géographie numérique et des SIG",
+        logo: "./assets/logos/ens_tana.jpeg",
+        zoom: 12
+      },
+      {
+        lat: 49.0350, lon: 2.0600,
+        title: "Licence Géographie et Aménagement",
+        place: "CY Paris Université",
+        period: "2021 – 2024",
+        type: "edu",
+        desc: "Formation en géographie et aménagement du territoire",
+        logo: "./assets/logos/cyu.png",
+        zoom: 13
+      },
+      {
+        lat: 48.8499, lon: 2.3447,
+        title: "Licence Géographie (suite)",
+        place: "Sorbonne Université Paris 4",
+        period: "2021 – 2024",
+        type: "edu",
+        desc: "Approfondissement en géographie",
+        logo: "./assets/logos/sorbonne.png",
+        zoom: 14
+      },
+      {
+        lat: 48.9362, lon: 2.3574,
+        title: "Géomaticien / Chargé d'études stagiaire",
+        place: "Observatoire EPT Plaine Commune",
+        period: "juin – sept. 2023",
+        type: "work",
+        desc: "Production cartographique et traitement de données géographiques",
+        logo: "./assets/logos/plaine_commune.png",
+        zoom: 14
+      },
+      {
+        lat: 48.9066, lon: 2.4400,
+        title: "Chargé d'étude stagiaire",
+        place: "Conseil départemental de la Seine-Saint-Denis",
+        period: "mars – sept. 2024",
+        type: "work",
+        desc: "Étude sur la multiculturalité, traitement et analyse de données",
+        logo: "./assets/logos/cd93.png",
+        zoom: 14
+      },
+      {
+        lat: 48.9364, lon: 2.3622,
+        title: "Master G2M",
+        place: "Université Paris 8",
+        period: "2024 – 2026",
+        type: "edu",
+        desc: "Géomatique, Géodécisionnel, Géomarketing et Multimédia",
+        logo: "./assets/logos/paris8.png",
+        zoom: 14
+      },
+      {
+        lat: 50.9686, lon: 1.8556,
+        title: "Géomaticien apprenti",
+        place: "Port de Boulogne-sur-Mer—Calais (site de Calais)",
+        period: "2024 – 2026",
+        type: "work",
+        desc: "Développement d'outils cartographiques, portail biodiversité, veille 3D — pour le compte du Conseil régional des Hauts-de-France, gestionnaire du port",
+        logo: "./assets/logos/hdf.png",
+        zoom: 13
+      }
+    ];
+
+    // Stocker les marqueurs pour y accéder depuis le panneau
+    const markers = [];
+
+    // Ligne de connexion entre les points (parcours chronologique)
+    const routeCoords = parcours.map(p => [p.lat, p.lon]);
+    L.polyline(routeCoords, {
+      color: '#2b6cb0',
+      weight: 2,
+      opacity: 0.5,
+      dashArray: '8, 8'
+    }).addTo(parcoursMap);
+
+    // Marqueurs avec popups incluant logos
+    parcours.forEach((p, index) => {
+      const icon = p.type === 'work' ? workIcon : eduIcon;
+      const marker = L.marker([p.lat, p.lon], { icon: icon }).addTo(parcoursMap);
+      marker.bindPopup(`
+        <div style="font-family: Poppins, sans-serif; min-width: 240px;">
+          <div style="background: ${p.type === 'work' ? '#2b6cb0' : '#38a169'}; color: white; padding: 4px 10px; border-radius: 8px 8px 0 0; font-size: 0.75rem; font-weight: 500;">
+            ${p.period}
+          </div>
+          <div style="padding: 10px; display: flex; gap: 10px; align-items: center;">
+            <img src="${p.logo}" alt="${p.place}" style="width: 45px; height: 45px; object-fit: contain; border-radius: 6px; flex-shrink: 0;" onerror="this.style.display='none'" />
+            <div>
+              <strong style="color: #1a365d; font-size: 0.9rem;">${p.title}</strong><br/>
+              <span style="color: #2b6cb0; font-size: 0.8rem;">${p.place}</span><br/>
+              <span style="color: #718096; font-size: 0.75rem;">${p.desc}</span>
+            </div>
+          </div>
+        </div>
+      `, { className: 'custom-popup', maxWidth: 300 });
+      markers.push(marker);
+    });
+
+    // Construire le panneau latéral
+    const panel = document.getElementById('parcours-panel');
+    let flyPopupTimeout;
+    const FLY_DURATION = 3.5; // secondes — animation lente et immersive
+    const HOVER_DELAY = 220;  // ms de survol avant de déclencher le vol
+    parcours.forEach((p, index) => {
+      const item = document.createElement('div');
+      item.className = `parcours-item ${p.type === 'work' ? 'parcours-work' : 'parcours-edu'}`;
+      item.innerHTML = `
+        <span class="parcours-marker"><i class="fas ${p.type === 'work' ? 'fa-briefcase' : 'fa-graduation-cap'}"></i></span>
+        <div class="parcours-content">
+          <span class="parcours-date">${p.period}</span>
+          <strong class="parcours-title-text">${p.title}</strong>
+          <span class="parcours-place">${p.place}</span>
+        </div>
+      `;
+      // Vol immersif déclenché après un court survol, pour ne pas partir
+      // quand la souris ne fait que traverser la liste.
+      let hoverTimer;
+      item.addEventListener('mouseenter', () => {
+        hoverTimer = setTimeout(() => {
+          document.querySelectorAll('.parcours-item').forEach(el => el.classList.remove('active'));
+          item.classList.add('active');
+          parcoursMap.flyTo([p.lat, p.lon], p.zoom, { duration: FLY_DURATION });
+          // On n'ouvre le popup qu'une fois le vol terminé, et on annule
+          // toute ouverture en attente si un autre item est survolé entre-temps.
+          clearTimeout(flyPopupTimeout);
+          flyPopupTimeout = setTimeout(
+            () => markers[index].openPopup(),
+            FLY_DURATION * 1000
+          );
+        }, HOVER_DELAY);
+      });
+      item.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
+      panel.appendChild(item);
+    });
+
+    // Ajuster la vue pour montrer tous les points
+    const bounds = L.latLngBounds(parcours.map(p => [p.lat, p.lon]));
+    parcoursMap.fitBounds(bounds, { padding: [50, 50] });
+
+    // Au clic sur un marqueur, activer l'item correspondant dans le panneau
+    markers.forEach((marker, index) => {
+      marker.on('click', () => {
+        document.querySelectorAll('.parcours-item').forEach(el => el.classList.remove('active'));
+        const items = document.querySelectorAll('.parcours-item');
+        if (items[index]) {
+          items[index].classList.add('active');
+          items[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
