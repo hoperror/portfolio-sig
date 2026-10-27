@@ -77,18 +77,18 @@
     /* ---------- BODY ---------- */
     .body {
       display: grid;
-      grid-template-columns: 60mm 1fr;
+      grid-template-columns: 1fr 75mm;
     }
+    main { padding: 7mm 8mm 7mm 10mm; }
     aside {
       background: #eef3f9;
-      padding: 8mm 7mm;
+      padding: 7mm 6mm;
     }
-    main { padding: 8mm 9mm; }
 
-    .block { margin-bottom: 5.5mm; }
+    .block { margin-bottom: 4.5mm; }
 
     .side-title, .sec-title {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
       color: var(--primary-dark);
       text-transform: uppercase;
@@ -96,11 +96,11 @@
       display: flex;
       align-items: center;
       gap: 2mm;
-      margin-bottom: 3mm;
+      margin-bottom: 2.5mm;
     }
     .side-title::before {
       content: "";
-      width: 3mm; height: 3mm;
+      width: 2.5mm; height: 2.5mm;
       background: var(--primary);
       flex-shrink: 0;
     }
@@ -111,101 +111,108 @@
       background: var(--primary-light);
     }
     .sec-title .ic { color: var(--primary); display: flex; }
-    .sec-title .ic svg { width: 4mm; height: 4mm; fill: var(--primary); }
+    .sec-title .ic svg { width: 3.8mm; height: 3.8mm; fill: var(--primary); }
 
     /* Contact */
     .contact-line {
       display: flex;
       align-items: center;
-      gap: 2.2mm;
-      margin-bottom: 2.2mm;
+      gap: 2mm;
+      margin-bottom: 2mm;
     }
-    .contact-line .ci { width: 3.6mm; flex-shrink: 0; display: flex; }
-    .contact-line .ci svg { width: 3.4mm; height: 3.4mm; fill: var(--primary); }
+    .contact-line .ci { width: 3.4mm; flex-shrink: 0; display: flex; }
+    .contact-line .ci svg { width: 3.2mm; height: 3.2mm; fill: var(--primary); }
     .contact-line a, .contact-line span { color: var(--text); text-decoration: none; overflow-wrap: anywhere; }
 
-    .badge {
-      display: inline-block;
-      margin-top: 1mm;
-      background: var(--primary);
-      color: #fff;
-      font-weight: 600;
-      font-size: 8.5px;
-      padding: 1mm 3mm;
-      border-radius: 1mm;
-    }
-
     /* Skills */
-    .skill-group { margin-bottom: 2.6mm; }
+    .skill-group { margin-bottom: 2.2mm; }
     .skill-group h4 {
-      font-size: 9px;
+      font-size: 8.5px;
       color: var(--primary-dark);
       font-weight: 600;
-      margin-bottom: 0.5mm;
+      margin-bottom: 0.3mm;
     }
-    .skill-group p { color: #4a5568; }
-    .skill-group em { color: var(--muted); font-style: italic; }
+    .skill-group p { color: #4a5568; font-size: 8.5px; line-height: 1.35; }
+
+    /* Formation sidebar */
+    .edu-item { margin-bottom: 2.2mm; }
+    .edu-item .edu-degree {
+      font-weight: 600;
+      color: var(--primary-dark);
+      font-size: 8.5px;
+      line-height: 1.3;
+    }
+    .edu-item .edu-school {
+      color: var(--muted);
+      font-size: 8.5px;
+    }
+    .edu-item .edu-year {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 8px;
+    }
 
     /* Languages */
     .lang-line {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 1.6mm;
+      margin-bottom: 1.4mm;
+      font-size: 8.5px;
     }
     .lang-line span:first-child { font-weight: 600; color: var(--primary-dark); }
     .lang-line span:last-child { color: var(--primary); }
 
-    /* Bullet lists (animation, interests) */
+    /* Bullet lists (atouts, interests) */
     .mini-list { list-style: none; }
     .mini-list li {
       position: relative;
       padding-left: 3.5mm;
-      margin-bottom: 1.8mm;
+      margin-bottom: 1.4mm;
       color: #4a5568;
+      font-size: 8.5px;
     }
     .mini-list li::before {
       content: "";
       position: absolute;
-      left: 0; top: 1.4mm;
-      width: 1.6mm; height: 1.6mm;
+      left: 0; top: 1.3mm;
+      width: 1.4mm; height: 1.4mm;
       background: var(--green);
       border-radius: 0.4mm;
     }
-    .mini-list li em { color: var(--muted); font-style: italic; }
 
     /* Profil */
     .profile-text { text-align: justify; color: #4a5568; }
     .profile-text strong { color: var(--primary-dark); font-weight: 600; }
 
-    /* Experience / education items */
+    /* Experience items */
     .xp {
       display: grid;
-      grid-template-columns: 12mm 1fr;
-      gap: 3mm;
-      margin-bottom: 4.5mm;
+      grid-template-columns: 11mm 1fr;
+      gap: 2.5mm;
+      margin-bottom: 4mm;
     }
     .xp-logo {
-      width: 12mm; height: 12mm;
+      width: 11mm; height: 11mm;
       object-fit: contain;
       border-radius: 1.5mm;
       background: #fff;
       border: 1px solid var(--line);
-      padding: 1mm;
+      padding: 0.8mm;
     }
     .xp-head {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 4mm;
+      gap: 3mm;
     }
-    .xp-title { font-weight: 600; color: var(--primary-dark); font-size: 11px; }
-    .xp-date { color: var(--primary); font-weight: 600; font-size: 9px; white-space: nowrap; }
-    .xp-org { color: var(--muted); font-weight: 500; margin-bottom: 1mm; }
+    .xp-title { font-weight: 600; color: var(--primary-dark); font-size: 10.5px; }
+    .xp-date { color: var(--primary); font-weight: 600; font-size: 8.5px; white-space: nowrap; }
+    .xp-org { color: var(--muted); font-weight: 500; margin-bottom: 0.8mm; font-size: 8.5px; }
     .xp-list { list-style: none; }
     .xp-list li {
       position: relative;
       padding-left: 3.5mm;
-      margin-bottom: 1.4mm;
+      margin-bottom: 1.2mm;
       color: #4a5568;
       text-align: justify;
     }
@@ -219,8 +226,42 @@
     }
     .xp-list li .tech { color: var(--primary); font-style: italic; }
 
-    .edu { margin-bottom: 3.5mm; }
-    .edu .xp-title { font-size: 10.5px; }
+    /* Autres expériences */
+    .autres-xp {
+      margin-top: 1mm;
+      color: var(--muted);
+      font-size: 8.5px;
+      padding-left: 13.5mm;
+    }
+    .autres-xp strong { color: var(--primary-dark); font-weight: 600; }
+
+    /* Projets */
+    .project {
+      margin-bottom: 2.5mm;
+      padding-left: 13.5mm;
+    }
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 3mm;
+    }
+    .project-title {
+      font-weight: 600;
+      color: var(--primary-dark);
+      font-size: 9px;
+    }
+    .project-year {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 8px;
+      white-space: nowrap;
+    }
+    .project-desc {
+      color: #4a5568;
+      font-size: 8.5px;
+    }
+    .project-desc .tech { color: var(--primary); font-style: italic; }
   </style>
 </head>
 <body>
@@ -229,88 +270,11 @@
     <header>
       <div class="tagline"><span class="sq"></span><span class="sq"></span><span class="sq"></span> Géomatique · Webmapping · Analyse spatiale</div>
       <div class="name">Lucas Ravelonjaka</div>
-      <div class="subtitle">Ingénieur géomaticien <span class="dot"></span> Chargé de projets SIG</div>
+      <div class="subtitle">Ingénieur géomaticien <span class="dot"></span> Données spatiales &amp; Développement SIG</div>
     </header>
 
     <div class="body">
-      <!-- SIDEBAR -->
-      <aside>
-        <div class="block">
-          <div class="side-title">Contact</div>
-          <div class="contact-line">
-            <span class="ci"><svg viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span>
-            <span>+33 6 63 80 74 97</span>
-          </div>
-          <div class="contact-line">
-            <span class="ci"><svg viewBox="0 0 512 512"><path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2z"/></svg></span>
-            <a href="mailto:lucasravelonjaka@gmail.com">lucasravelonjaka@gmail.com</a>
-          </div>
-          <div class="contact-line">
-            <span class="ci"><svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg></span>
-            <span>Île-de-France</span>
-          </div>
-          <div class="contact-line">
-            <span class="ci"><svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></span>
-            <a href="https://www.linkedin.com/in/lucasravelonjaka">in/lucasravelonjaka</a>
-          </div>
-          <div class="contact-line">
-            <span class="ci"><svg viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg></span>
-            <a href="https://github.com/hoperror">github.com/hoperror</a>
-          </div>
-          <span class="badge">Permis B</span>
-        </div>
-
-        <div class="block">
-          <div class="side-title">Compétences</div>
-          <div class="skill-group">
-            <h4>SIG &amp; suite ESRI</h4>
-            <p>ArcGIS Pro, ArcGIS Online, Experience Builder, Field Maps, QGIS, FME <em>· Enterprise/Portal (notions)</em></p>
-          </div>
-          <div class="skill-group">
-            <h4>Bases de données spatiales</h4>
-            <p>PostgreSQL/PostGIS, PL/SQL, SQLite <em>· modélisation de données</em></p>
-          </div>
-          <div class="skill-group">
-            <h4>Analyse &amp; cartographie</h4>
-            <p>Python (pandas, geopandas), R (sf, mapsf) <em>· analyse spatiale, sémiologie graphique</em></p>
-          </div>
-          <div class="skill-group">
-            <h4>Web SIG &amp; développement</h4>
-            <p>Leaflet, Django/GeoDjango, HTML/CSS, JavaScript, PHP <em>· Conda, Git</em></p>
-          </div>
-          <div class="skill-group">
-            <h4>Gestion de projet</h4>
-            <p>Agile/Scrum, Notion, Wrike</p>
-          </div>
-        </div>
-
-        <div class="block">
-          <div class="side-title">Langues</div>
-          <div class="lang-line"><span>Malgache</span><span>Langue maternelle</span></div>
-          <div class="lang-line"><span>Français</span><span>Bilingue</span></div>
-          <div class="lang-line"><span>Anglais</span><span>B1</span></div>
-        </div>
-
-        <div class="block">
-          <div class="side-title">Animation &amp; formation</div>
-          <ul class="mini-list">
-            <li>Responsable EEUdF · encadrement de groupes (BAFA)</li>
-            <li>Secouriste en santé mentale (PSSM)</li>
-            <li><em>Aptitude à animer des groupes de travail et à accompagner la montée en compétence des utilisateurs.</em></li>
-          </ul>
-        </div>
-
-        <div class="block">
-          <div class="side-title">Centres d'intérêt</div>
-          <ul class="mini-list">
-            <li>Volleyball, basketball</li>
-            <li>Lecture (romans historiques)</li>
-            <li>Engagement environnemental</li>
-          </ul>
-        </div>
-      </aside>
-
-      <!-- MAIN -->
+      <!-- MAIN (left) -->
       <main>
         <div class="block">
           <div class="sec-title">
@@ -318,13 +282,13 @@
             Profil
           </div>
           <p class="profile-text">
-            Ingénieur géomaticien (Bac+5) spécialisé dans la <strong>conception d'outils cartographiques</strong> et la
-            <strong>structuration de bases de données spatiales</strong>. Deux ans d'apprentissage sur des projets
-            opérationnels de gestion territoriale et de <strong>suivi environnemental</strong>, de l'administration de la
-            donnée à la production cartographique et au <strong>déploiement d'outils de saisie terrain</strong>. Maîtrise
-            de la <strong>suite ESRI</strong> (ArcGIS Pro, ArcGIS Online, Experience Builder, Field Maps) comme des
-            <strong>solutions open-source</strong> (PostGIS, Leaflet, Django). Sensible aux enjeux de biodiversité et de
-            nature en ville, avec un goût prononcé pour l'accompagnement pédagogique et la montée en compétence des équipes.
+            Géomaticien (Bac+5) avec un fort intérêt pour la <strong>gestion et l'analyse spatiale et environnementale</strong>.
+            Deux ans d'expérience en collectivité territoriale : <strong>administration et contrôle qualité d'une base PostGIS</strong>,
+            conception de <strong>portails cartographiques</strong> et d'<strong>applications web métier</strong>, collecte de données
+            sur le terrain, documentation et <strong>accompagnement des utilisateurs</strong>. Maîtrise de la suite ESRI
+            (ArcGIS Pro, ArcGIS Online, Experience Builder, Field Maps) comme des <strong>solutions open-source</strong>
+            (PostGIS, Django/GeoDjango, Leaflet). Développe en Python des chaînes de traitement et des outils de géotraitement
+            à partir de <strong>données ouvertes</strong>.
           </p>
         </div>
 
@@ -341,10 +305,11 @@
                 <span class="xp-title">Géomaticien apprenti</span>
                 <span class="xp-date">Août 2024 – Août 2026</span>
               </div>
-              <div class="xp-org">Secteur SIG · Ports de Boulogne-sur-Mer–Calais, Région Hauts-de-France — Calais / Lille</div>
+              <div class="xp-org">Secteur SIG · Ports de Boulogne-sur-Mer–Calais, Région Hauts-de-France</div>
               <ul class="xp-list">
-                <li>Conception et déploiement d'un <strong>portail de suivi de colonies d'espèces protégées (laridés)</strong> : structuration des données de nidification, zones de compensation et de quiétude, partage avec partenaires internes et externes. <span class="tech">ArcGIS Pro, ArcGIS Online, Experience Builder</span></li>
-                <li>Développement d'un <strong>outil de suivi des chantiers et interventions</strong> sur le domaine portuaire : modélisation de la base spatiale, formulaires de saisie (CRUD), tableau de bord et gestion des droits d'accès. <span class="tech">PostgreSQL/PostGIS, Django, Leaflet</span></li>
+                <li>Administration d'une <strong>base PostGIS de patrimoine</strong> : structuration, contrôle qualité et fiabilisation des données saisies par plusieurs services.</li>
+                <li>Conception de <strong>portails cartographiques</strong> et d'applications web métier pour différents services. <span class="tech">ArcGIS Online, Experience Builder, Django, PostGIS, Leaflet</span></li>
+                <li>Levés GPS et détection de réseaux sur le terrain. Documentation, <strong>accompagnement des utilisateurs</strong>, veille technologique.</li>
               </ul>
             </div>
           </div>
@@ -353,12 +318,13 @@
             <img class="xp-logo" src="./assets/logos/cd93.png" alt="" onerror="this.style.visibility='hidden'" />
             <div>
               <div class="xp-head">
-                <span class="xp-title">Chargé d'étude (stage)</span>
+                <span class="xp-title">Chargé d'étude stagiaire</span>
                 <span class="xp-date">Mars 2024 – Sept. 2024</span>
               </div>
-              <div class="xp-org">Conseil départemental de la Seine-Saint-Denis · Direction des données, des études et des connaissances — Bobigny</div>
+              <div class="xp-org">Conseil départemental de la Seine-Saint-Denis — Bobigny</div>
               <ul class="xp-list">
-                <li>Appui aux <strong>études territoriales</strong> sur la multiculturalité et l'interculturalité : analyse de données, traitement statistique et cartographique, contribution à la conduite de projet.</li>
+                <li>Étude sur l'interculturalité (<strong>Biennale interculturelle 93</strong>) : enquêtes quantitatives et qualitatives, traitement de données, rédaction de livrables.</li>
+                <li>Diagnostics territoriaux de plusieurs communes, avec l'<strong>ODDS 93</strong> (Observatoire départemental des données sociales).</li>
               </ul>
             </div>
           </div>
@@ -367,57 +333,162 @@
             <img class="xp-logo" src="./assets/logos/plaine_commune.png" alt="" onerror="this.style.visibility='hidden'" />
             <div>
               <div class="xp-head">
-                <span class="xp-title">Géomaticien (stage)</span>
-                <span class="xp-date">Juin 2023 – Août 2023</span>
+                <span class="xp-title">Gestionnaire géomaticien</span>
+                <span class="xp-date">Août 2023 – Sept. 2023</span>
               </div>
               <div class="xp-org">Observatoire de l'EPT Plaine Commune · projet LudoSI — Saint-Denis</div>
               <ul class="xp-list">
-                <li>Déploiement d'un <strong>dispositif de saisie mobile terrain</strong> (ArcGIS Field Maps) pour l'inventaire géolocalisé des aires de jeux : paramétrage des formulaires, levés GPS, intégration et contrôle qualité. <span class="tech">ArcGIS Field Maps, ArcGIS Pro/Online</span></li>
+                <li>Collecte de données des <strong>aires de jeux communaux</strong> pour un outil métier destiné aux contrôleurs d'aires de jeux. <span class="tech">ArcGIS Field Maps, ArcGIS Pro, ArcGIS Online</span></li>
               </ul>
             </div>
           </div>
+
+          <p class="autres-xp"><strong>Autres expériences :</strong> chauffeur livreur de nuit (Ciblex) · vacataire Convivialité (Ville de Massy) · chargé d'étude stagiaire (EPT Plaine Commune)</p>
         </div>
 
         <div class="block">
           <div class="sec-title">
-            <span class="ic"><svg viewBox="0 0 640 512"><path d="M320 32c-8.1 0-16.1 1.4-23.7 4.1L15.8 137.4C6.3 140.9 0 149.9 0 160s6.3 19.1 15.8 22.6l57.9 20.9C57.3 229.3 48 259.8 48 291.9l0 28.1c0 28.4-10.8 57.7-22.3 80.8c-6.5 13-13.9 25.8-22.5 37.6C0 442.7-.9 448.3 .9 453.4s6 8.9 11.2 10.2l64 16c4.2 1.1 8.7 .3 12.4-2s6.3-6.1 7.1-10.4c8.6-42.8 4.3-81.2-2.1-108.7C90.3 344.3 86 329.8 80 316.5l0-24.6c0-30.2 10.2-58.7 27.9-81.5c12.9-15.5 29.6-27.4 48.5-34.4l134.2-48.6c8.3-3 17.4 1.3 20.4 9.6s-1.3 17.4-9.6 20.4L215.7 215.9c-1.3 .5-2.6 1-3.9 1.5l112.2 40.5c7.6 2.7 15.6 4.1 23.7 4.1s16.1-1.4 23.7-4.1L624.2 182.6c9.5-3.4 15.8-12.5 15.8-22.6s-6.3-19.1-15.8-22.6L343.7 36.1C336.1 33.4 328.1 32 320 32zM128 408c0 35.3 86 72 192 72s192-36.7 192-72L496.7 262.6 354.5 314c-11.1 4-22.8 6-34.5 6s-23.5-2-34.5-6L143.3 262.6 128 408z"/></svg></span>
-            Formation
+            <span class="ic"><svg viewBox="0 0 512 512"><path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 144-208 0c-35.3 0-64 28.7-64 64l0 144L64 512c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM176 352l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64l160 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-160 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg></span>
+            Projets académiques &amp; personnels
           </div>
 
-          <div class="xp edu">
-            <img class="xp-logo" src="./assets/logos/paris8.png" alt="" onerror="this.style.visibility='hidden'" />
-            <div>
-              <div class="xp-head">
-                <span class="xp-title">Master Géomatique (G2M) · Géodécisionnel, Géomarketing &amp; Multimédia</span>
-                <span class="xp-date">2024 – 2026</span>
-              </div>
-              <div class="xp-org">Université Paris 8 Vincennes–Saint-Denis</div>
+          <div class="project">
+            <div class="project-head">
+              <span class="project-title">Accessibilité multimodale depuis Paris</span>
+              <span class="project-year">2025 – 2026</span>
             </div>
+            <p class="project-desc">Destinations atteignables en 3h30 selon 5 modes de transport (données ouvertes GTFS, OSM, IGN), storymap interactif. <span class="tech">Python, QGIS, GeoLibre</span></p>
           </div>
 
-          <div class="xp edu">
-            <img class="xp-logo" src="./assets/logos/cyu.png" alt="" onerror="this.style.visibility='hidden'" />
-            <div>
-              <div class="xp-head">
-                <span class="xp-title">Licence Géographie &amp; Aménagement</span>
-                <span class="xp-date">2021 – 2024</span>
-              </div>
-              <div class="xp-org">CY Cergy Paris Université / Sorbonne Université (Paris IV)</div>
+          <div class="project">
+            <div class="project-head">
+              <span class="project-title">Service parcellaire communal, Le Pré-Saint-Gervais</span>
+              <span class="project-year">2025</span>
             </div>
+            <p class="project-desc">Base PostGIS, fonctions PL/pgSQL, API REST (pg_featureserv) et portail cartographique. <span class="tech">PostgreSQL/PostGIS, Leaflet</span></p>
           </div>
 
-          <div class="xp edu">
-            <img class="xp-logo" src="./assets/logos/ens_tana.jpeg" alt="" onerror="this.style.visibility='hidden'" />
-            <div>
-              <div class="xp-head">
-                <span class="xp-title">Licence Sciences de l'éducation · spé. Histoire-Géographie</span>
-                <span class="xp-date">2017 – 2020</span>
-              </div>
-              <div class="xp-org">École Normale Supérieure — Antananarivo (Madagascar)</div>
+          <div class="project">
+            <div class="project-head">
+              <span class="project-title">Évolution des contours IRIS, 2024 et 2025</span>
+              <span class="project-year">2025</span>
             </div>
+            <p class="project-desc">Flux ETL : détection des changements de contours IGN/INSEE, rapport HTML automatique. <span class="tech">FME, open data</span></p>
+          </div>
+
+          <div class="project">
+            <div class="project-head">
+              <span class="project-title">Outil accessibilité des espaces verts</span>
+              <span class="project-year">2025</span>
+            </div>
+            <p class="project-desc">GP Tool ArcGIS Pro : indice d'accessibilité par commune via réseau routier. <span class="tech">ArcGIS Pro, ArcPy, Python</span></p>
           </div>
         </div>
       </main>
+
+      <!-- SIDEBAR (right) -->
+      <aside>
+        <div class="block">
+          <div class="side-title">Contact</div>
+          <div class="contact-line">
+            <span class="ci"><svg viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span>
+            <span>+33 6 63 80 74 97</span>
+          </div>
+          <div class="contact-line">
+            <span class="ci"><svg viewBox="0 0 512 512"><path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2z"/></svg></span>
+            <a href="mailto:lucasravelonjaka@gmail.com">lucasravelonjaka@gmail.com</a>
+          </div>
+          <div class="contact-line">
+            <span class="ci"><svg viewBox="0 0 384 512"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg></span>
+            <span>Île-de-France</span>
+          </div>
+          <div class="contact-line">
+            <span class="ci"><svg viewBox="0 0 512 512"><path d="M352 256c0 22.2-1.2 43.6-3.3 64l-185.3 0c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64l185.3 0c2.2 20.4 3.3 41.8 3.3 64zm28.8-64l123.1 0c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64l-123.1 0c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32l-116.7 0c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0l-176.6 0c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0L18.6 160C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192l123.1 0c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64L8.1 320C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6l176.6 0c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352l116.7 0zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6l116.7 0z"/></svg></span>
+            <a href="https://portfolio.lucas-sy-karen.eu">portfolio.lucas-sy-karen.eu</a>
+          </div>
+          <div class="contact-line">
+            <span class="ci"><svg viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></span>
+            <a href="https://www.linkedin.com/in/lucasravelonjaka">in/lucasravelonjaka</a>
+          </div>
+          <div class="contact-line">
+            <span class="ci"><svg viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg></span>
+            <a href="https://github.com/hoperror">github.com/hoperror</a>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="side-title">Compétences</div>
+          <div class="skill-group">
+            <h4>Écosystème Esri</h4>
+            <p>ArcGIS Pro, Online, Experience Builder, Field Maps, ArcPy</p>
+          </div>
+          <div class="skill-group">
+            <h4>SIG open-source</h4>
+            <p>QGIS, PyQGIS, GeoLibre (storymap), QField, Geoconcept, sémiologie graphique</p>
+          </div>
+          <div class="skill-group">
+            <h4>Analyse spatiale</h4>
+            <p>Accessibilité, isochrones, jointures spatiales, Getis-Ord Gi*, ACP, k-means</p>
+          </div>
+          <div class="skill-group">
+            <h4>Données</h4>
+            <p>PostgreSQL/PostGIS, SQL, PL/pgSQL, modélisation, FME (flux ETL), données ouvertes, API REST</p>
+          </div>
+          <div class="skill-group">
+            <h4>Scripts &amp; traitement</h4>
+            <p>Python (pandas, geopandas, folium), ArcPy, Jupyter, R (sf, mapsf), Julia, Shell</p>
+          </div>
+          <div class="skill-group">
+            <h4>Développement web</h4>
+            <p>Django/GeoDjango, PHP, Leaflet, API REST, OpenLayers, GeoServer</p>
+          </div>
+          <div class="skill-group">
+            <h4>Restitution &amp; pédagogie</h4>
+            <p>Cartes thématiques, tableaux de bord, documentation Markdown, animation de groupes</p>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="side-title">Formation</div>
+          <div class="edu-item">
+            <div class="edu-degree">Master Géomatique (G2M)</div>
+            <div class="edu-school">Université Paris 8 · <span class="edu-year">2024 – 2026</span></div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Licence Géographie &amp; Aménagement</div>
+            <div class="edu-school">CY Cergy Paris Université · <span class="edu-year">2021 – 2024</span></div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-degree">Licence Sciences de l'éducation</div>
+            <div class="edu-school">ENS Antananarivo (Madagascar) · <span class="edu-year">2017 – 2020</span></div>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="side-title">Langues</div>
+          <div class="lang-line"><span>Malgache</span><span>Langue maternelle</span></div>
+          <div class="lang-line"><span>Français</span><span>Bilingue</span></div>
+          <div class="lang-line"><span>Anglais</span><span>B1</span></div>
+        </div>
+
+        <div class="block">
+          <div class="side-title">Atouts</div>
+          <ul class="mini-list">
+            <li>Permis B</li>
+            <li>Animateur bénévole EEUdF (BAFA)</li>
+            <li>Secouriste en santé mentale (PSSM)</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <div class="side-title">Centres d'intérêt</div>
+          <ul class="mini-list">
+            <li>Volleyball, basketball</li>
+            <li>Lecture (romans historiques)</li>
+            <li>Animateur Fresque du climat</li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </div>
 </body>
